@@ -23,7 +23,7 @@ export const CryptoProvider = ({ children }) => {
   // This is only for example purpose and not covered in the video
   // create one state for the error
   const [error, setError] = useState({ data: "", coinData: "", search: "" });
-// there can be 3 errors that we can catch from all three functions, also send the error state 
+// there can be 3 errors that we can catch from all three functions, also send the error state
 // through value prop
 
   const getCryptoData = async () => {
@@ -84,7 +84,7 @@ export const CryptoProvider = ({ children }) => {
   const getSearchResult = async (query) => {
     try {
       const data = await fetch(
-        `https://api.coingecko.com/api/v3/search?query=${query}`
+        `https://api.coingecko.com/api/v3/search?query=${query}`, {mode: 'cors'}
       )
         .then((res) => res.json())
         .then((json) => json);
